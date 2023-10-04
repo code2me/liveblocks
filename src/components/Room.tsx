@@ -26,7 +26,7 @@ export function Room() {
 
   // Add person mutation
   const addPerson = useMutation(({ storage }) => {
-    const newPerson = new LiveObject({ name: "Grace", age: 45 });
+    const newPerson = new LiveObject({ name: "Enter User", age: 30 });
     storage.get("people").push(newPerson);
   }, []);
 
@@ -69,7 +69,6 @@ export function Room() {
         onPointerMove={handlePointerMove}
         onPointerLeave={handlePointerLeave}
       >
-        Cursor: {JSON.stringify(myPresence.cursor)}
         <div>There are {userCount} other user(s) online</div>
         {others
           .filter((other) => other.presence.cursor !== null)
@@ -89,9 +88,9 @@ export function Room() {
         >
           Broadcast event
         </button>
-        {people.map((person, index) => (
+        {people.map((person: any, index: number) => (
           <input
-            className="ring-2 ring-black p-3 w-[50%]"
+            className="ring-1 ring-black p-3 w-[50%] rounded-md text-xl"
             key={index}
             type="text"
             value={person.name}
@@ -107,7 +106,7 @@ export function Room() {
           </button>
           <button
             onClick={resetPerson}
-            className="bg-green-500 text-white p-3 rounded-md"
+            className="bg-orange-400 text-white p-3 rounded-md"
           >
             Reset
           </button>

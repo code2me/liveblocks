@@ -12,7 +12,7 @@ export default function Home() {
       id={roomId}
       initialPresence={{ cursor: null }}
       initialStorage={{
-        people: new LiveList([new LiveObject({ name: "Marie", age: 30 })]),
+        people: new LiveList([new LiveObject({ name: "Navneet", age: 23 })]),
       }}
     >
       <ClientSideSuspense fallback={<div>Loading…</div>}>
