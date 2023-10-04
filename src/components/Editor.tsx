@@ -10,7 +10,6 @@ import { useRoom, useSelf } from "@/config/liveblock.config";
 import { useEffect, useState } from "react";
 import styles from "@/styles/CollaborativeEditor.module.css";
 import { Toolbar } from "./Toolbar";
-import { Avatars } from "./Avatars";
 
 // Collaborative text editor with simple rich text, live cursors, and live avatars
 export function CollaborativeEditor() {
@@ -77,7 +76,6 @@ function TiptapEditor({ doc, provider }: EditorProps) {
         <div className={styles.editorHeader}>
           <Toolbar editor={editor} />
         </div>
-        {/* <Avatars /> */}
         <EditorContent editor={editor} className={styles.editorContainer} />
       </div>
     </div>
